@@ -1,59 +1,379 @@
-<style>
-header {
-background: #222;
-color: white;
-padding: 1rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-nav a {
-color: white;
-margin-left: 1rem;
-text-decoration: none;
+body {
+  line-height: 1.6;
+  background-color: rgb(255, 239, 239);
+  color: #333;
 }
 
-
-/* Landing Page Grid */
-.landing-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: auto auto;
-gap: 20px;
-padding: 20px;
+/* =========================
+   HEADER
+========================= */
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color:#e67e22;
 }
+
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+/* =========================
+   HERO/HUVUD SEKTION
+========================= */
 .hero {
-grid-column: 1 / 3;
-background: #ddd;
-padding: 20px;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/restaurant.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  padding-top: 80px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn-one {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #e67e22;
+  color: whitesmoke;            
+  text-decoration: none;
+  font-weight: 550;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
 
 
-/* Cards Page */
-.cards-grid {
-padding: 20px;
+/* =========================
+   ABOUT SEKTION
+========================= */
+.about {
+  background: #e67e22; 
+  padding: 120px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 400px;
 }
-.card-container {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
+
+.about-content {
+  max-width: none; 
+  width: 100%;
+  text-align: left;
 }
-.card {
-background: #ececec;
-padding: 20px;
-width: 200px;
-height: 120px;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 8px;
+
+.about-content h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  text-align: center; 
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.about-content p {
+  font-size: 35px;
+  line-height: 1.3;
+  color: white; 
+  margin: 0 0 20px 0; 
+  word-wrap: break-word;
+}
+
+.footer {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  color: black;     
+  margin: 0 0 10px 0;
+  font-size: 16px;
 }
 
 
-/* About Page Layout */
+.social-icons a {
+  margin: 0 10px;       
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 40px;      
+  height: 40px;
+}
+
+/* =========================
+   ABOUT SEKTION
+========================= */
 .about-layout {
-padding: 20px;
+  padding-top: 120px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
-</style>
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 2.5rem 0;
+}
+
+.about-hero::before {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 6px;
+  background-color: #e67e22;
+  margin: 0 auto 2rem auto;
+}
+
+
+.about-hero::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 6px;
+  background-color: #e67e22;
+  margin: 2rem auto 0 auto;
+}
+
+.about-hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+.about-hero h2 {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-box h3 {
+  margin-bottom: 0.5rem;
+}
+
+.image-box {
+  width: 100%;
+  max-width: 450px;
+  height: 260px;   
+  border: 7px solid #e67e22;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.about-kontakt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border: 2px #333;
+  background-color: #e67e22;
+}
+
+.about-kontakt p {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.about-kontakt .btn-one {
+  background-color: white;
+  color: #e67e22;
+  font-weight: 700;
+  border: none;
+  padding: 0.9rem 2rem;
+}
+
+.about-kontakt .btn-two {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: white;
+  color: #e67e22;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 4rem;
+  border-top: 10px solid #e67e22;
+}
+
+footer p {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  color: black;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+}
+
+/* =========================
+   CARDS / MENY
+========================= */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem;
+}
+
+.meny-card {
+  background-color: white;
+  border: 4px solid #e67e22;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.meny-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card-content p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+}
+
+
+.tag {
+  margin-top: auto;
+  align-self: flex-start;
+  background-color: #e67e22;
+  color: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+}
